@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+{% block title %}Home{% endblock title %}
+{% block navLink %}home{% endblock navLink %}
+{% block paginationLink %}1{% endblock paginationLink %}
+{% block body %}
+{{ super() }}
+<h3 class="mt-3">Aerospace Engineering Description</h3>
+    <hr>
+    <p>&emsp;&emsp;Aerospace engineering is the study of the design, development, and production of air and spacecraft.
+      This
+      engineering discipline is often divided between those who pursue careers on the aeronautical side and those
+      working on spacecraft. Both air and space vehicles contain complex subsystems that require specialists from many
+      engineering groups such as electrical, mechanical, and computer engineering. You could specialize in aerodynamics,
+      aeroelasticity, composites analysis, avionics, propulsion and structures and materials.
+      <br><br>
+      &emsp;&emsp;However, the broad knowledge of air and space craft possessed by aerospace engineers best equips them
+      to
+      serve as
+      systems engineers or engineering project managers on most aerospace projects. Aerospace engineers functioning as
+      systems engineers or engineering project managers on projects manage aerospace development and upgrade efforts
+      from an enterprise perspective.
+    </p>
+<div class="text-center">    
+<img src="{{ url_for('static', filename = 'aerospacePic.png') }}" alt="Aerospace Engineering Picture" class="rounded w-50" >
+</div>
+
+    <h3 class="mt-5">Civil Engineering Description</h3>
+    <hr>
+    <p>&emsp;&emsp;Civil engineers specialize in road, bridge, building, and water supply system design and
+      construction. They need to keep an eye on environmental and social concerns of the infrastructure they build. They
+      supervise
+      and direct construction teams and work with other engineers. Civil Engineers usually work in an office creating
+      designs and
+      structural plans, but may also need to travel abroad and visit construction sites. Civil engineering is one of the
+      oldest and most popular fields of engineering, and currently employs over 262,000 people. </p>
+{% endblock body %}

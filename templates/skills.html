@@ -1,0 +1,51 @@
+{% extends "template.html" %}
+{% block title %}Skills{% endblock title %}
+{% block navLink %}skills{% endblock navLink %}
+{% block paginationLink %}2{% endblock paginationLink %}
+{% block body %}
+{{ super() }}
+<h3 class="mt-3">Aerospace Engineering Skills</h3>
+    <hr>
+    <h5>Interests</h5>
+    <ul>
+      {% for i in aerospaceInterests %}
+      <li>{{i}}</li>
+      {% endfor %}
+    </ul>
+    <h5 class="mt-3">Skills</h5>
+    <div class="row row-cols-1 row-cols-md-5 g-4 text-center justify-content-center align-content-center mb-4">
+    {% for e in aerospaceSkills %}
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <p class="card-text">{{e}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+    <h5 class="mt-3">Education Requirements</h5>
+    <p>&emsp;&emsp;You’ll usually find aeronautical engineering degrees referred to as a BEng (Bachelor of Engineering) and MEng (Masters in Engineering). Aeronautical engineering degrees at the undergraduate level usually last three or four years, but many institutions allow students to progress directly into a Masters in Aeronautical Engineering, extending the course length by an additional year or two.</p>
+    <h3 class="mt-5">Civil Engineering Skills</h3>
+    <hr>
+    <h5>Interests</h5>
+    <ul>
+      {% for i in civilInterests %}
+      <li>{{i}}</li>
+      {% endfor %}
+    </ul>
+    <h5 class="mt-3">Skills</h5>
+    <div class="row row-cols-1 row-cols-md-5 g-4 text-center justify-content-center align-content-center mb-4">
+    {% for e in civilSkills %}
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <p class="card-text">{{e}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+    <h5 class="mt-3">Education Requirements</h5>
+    <p>&emsp;&emsp;Generally need a bachelor’s degree in civil engineering or a related field. Should take courses including engineering mechanics, mathematics, statistics and fluid dynamics. Could specialize your education in areas like geotechnical engineering, which focuses more on building structures, structural engineering for dams and bridges and transportation engineering for streets, highways and everyday systems. Also structural, architectural, transportation, environmental, and hydraulic engineering.</p>
+{% endblock body %}
