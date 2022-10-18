@@ -53,7 +53,39 @@ def projects():
 
 @app.route('/education')
 def education():
-    return render_template('education.html')
+    aerospaceData = [
+        ('MIT.jpg', 'Massachusetts Institute of Technology',
+         'Private Institution', 1, 55510, [
+             'Introduction to Computer Science Programming in Python',
+             'Introduction to Computational Thinking and Data Science',
+             'Unified Engineering: Signals and Systems',
+             'Unified Engineering: Fluid Dynamics',
+             'Unified Engineering: Thermodynamics and Propulsion',
+             'Principles of Automatic Control', 'Dynamics',
+             'Statistics and Probability', 'Introduction to Probability',
+             'Differential Equations'
+         ]),
+        ('Illinois.jpg', 'University of Illinois Urbana-Champaign',
+         'Public University', 2, 18998, [
+             'Aerospace Computer-Aided Design', 'Aerospace Flight Mechanics',
+             'Incompressible Flow', 'Compressible Flow',
+             'Mechs of Aerospace Structures', 'Applied Aerospace Structures',
+             'Aerospace Dynamical Systems', 'Aerospace Control Systems',
+             'Thermodynamics', 'Engineering Materials',
+             'Introduction to Statics', 'Introductory Dynamics'
+         ]),
+        ('Michigan.jpg', 'University of Michigan - Ann Arbor',
+         'Public University', 3, 28338, [
+             'Intro to Aerospace Engineering',
+             'Intro to Solid Mechanics and Aerospace Structures',
+             'Intro to Gas Dynamics', 'Aircraft and Spacecraft Structures',
+             'Aerodynamics', 'Aircraft and Spacecraft Propulsion',
+             'Aircraft Dynamics or AEROSP 343 Spacecraft Dynamics',
+             'Introduction to Aerospace Computing',
+             'Control of Aerospace Vehicles'
+         ])
+    ]
+    return render_template('education.html', aerospaceData=aerospaceData)
 
 
 app.run(host='0.0.0.0', port=81, debug=True)
