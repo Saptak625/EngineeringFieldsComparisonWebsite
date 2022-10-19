@@ -75,7 +75,7 @@ def education():
              'Introduction to Statics', 'Introductory Dynamics'
          ]),
         ('Michigan.jpg', 'University of Michigan - Ann Arbor',
-         'Public University', 3, 28338, [
+         'Public Institution', 3, 28338, [
              'Intro to Aerospace Engineering',
              'Intro to Solid Mechanics and Aerospace Structures',
              'Intro to Gas Dynamics', 'Aircraft and Spacecraft Structures',
@@ -85,7 +85,16 @@ def education():
              'Control of Aerospace Vehicles'
          ])
     ]
-    return render_template('education.html', aerospaceData=aerospaceData)
+
+    civilData = [
+        ('Berkeley.jpg', 'University of California - Berkeley',
+         'Public Institution', 4, 43980, ['Structural reliability', 'Mechanics of solids', 'Concrete technology', 'Construction, scheduling, resource allocation', 'Advanced soil mechanics', 'Linear programming', 'Reliability theory', 'Applied dynamic programming']),
+        ('MIT.jpg', 'Massachusetts Institute of Technology',
+         'Private Institution', 5, 57986, ['Engineering computation and data science', 'Intro to computer programming and numerical methods for engineering applications', 'Startup sustainable technologies', 'Experiential sustainability', 'Tools for sustainable design', 'Engineering for a sustainable world', 'Climate change', 'Probability and casual interference', 'Senior civil and environmental design', 'Fundamentals of ecology', 'Mechanics of materials']),
+        ('Oregon.jpg', 'Oregon State University',
+         'Public Institution', 6, 29421, ['Design engineering and problem solving', 'Computational and algorithmic thinking', 'Chemistry', 'General physics w/ calc', 'Differential calc', 'Integral calc', 'Vector calc', 'English composition', 'Structural theory', 'Hydrology', 'Reinforced concrete', 'Geotechnical engineering', 'Intro to highway engineering'])
+    ]
+    return render_template('education.html', aerospaceData=aerospaceData, civilData=civilData)
 
 
 app.run(host='0.0.0.0', port=81, debug=True)

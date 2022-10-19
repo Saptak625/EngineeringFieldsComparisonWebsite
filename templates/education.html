@@ -6,7 +6,7 @@
 {{ super() }}
 <h3 class="mt-3">Aerospace Engineering Education</h3>
     <hr>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="grid_1">
       {% for d in aerospaceData %}
       <div class="col">
         <div class="card h-100">
@@ -15,7 +15,7 @@
             <h5 class="card-title">{{ d[1] }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ d[2] }}</h6>
             <div class="fs-5">
-              <div id="{{ d[3] }}" class="text-success fw-bold fs-2">{{ d[4] }}</div>
+              <div id="e{{ d[3] }}" class="text-success fw-bold fs-2">{{ d[4] }}</div>
               per year
             </div>
           </div>
@@ -27,7 +27,7 @@
               <li class="list-group-item">{{ i }}</li>
               {% endfor %}
             </ul>
-          <a href="#" class="btn btn-primary m-3">Go somewhere</a>
+          <a href="#" class="btn btn-primary m-3">Learn More</a>
         </div>
       </div>
       {% endfor %}
@@ -36,17 +36,61 @@
 
     <h3 class="mt-5">Civil Engineering Education</h3>
     <hr>
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="grid_1">
+      {% for d in civilData %}
+      <div class="col">
+        <div class="card h-100">
+          <img src="{{ url_for('static', filename = d[0]) }}" class="card-img-top" alt="{{ d[1] }} Picture" height="200px">
+          <div class="card-body">
+            <h5 class="card-title">{{ d[1] }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ d[2] }}</h6>
+            <div class="fs-5">
+              <div id="e{{ d[3] }}" class="text-success fw-bold fs-2">{{ d[4] }}</div>
+              per year
+            </div>
+          </div>
+          <div class="card-header">
+              Courses
+            </div>
+            <ul class="list-group list-group-flush">
+              {% for i in d[5] %}
+              <li class="list-group-item">{{ i }}</li>
+              {% endfor %}
+            </ul>
+          <a href="#" class="btn btn-primary m-3">Learn More</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
 {% endblock body %}
 {% block script %}          
-let text1 = document.getElementById('1');
-let text2 = document.getElementById('2');
-let text3 = document.getElementById('3');
+let text1 = document.getElementById('e1');
+let text2 = document.getElementById('e2');
+let text3 = document.getElementById('e3');
 
-const load = () => {
+let text4 = document.getElementById('e4');
+let text5 = document.getElementById('e5');
+let text6 = document.getElementById('e6');
+
+const load1 = () => {
     animate(text1, 0, parseInt(text1.innerHTML), 1500, '$');
     animate(text2, 0, parseInt(text2.innerHTML), 1500, '$');
     animate(text3, 0, parseInt(text3.innerHTML), 1500, '$');
 }
 
-load();
+triggered2 = false;
+const load2 = () => {
+    animate(text4, 0, parseInt(text4.innerHTML), 1500, '$');
+    animate(text5, 0, parseInt(text5.innerHTML), 1500, '$');
+    animate(text6, 0, parseInt(text6.innerHTML), 1500, '$');
+}
+
+window.addEventListener('scroll', function (event) {
+  if (isInViewPort(text4) && !triggered2) {
+        load2();
+        triggered2 = true;
+      }
+}, false);
+
+load1();
 {% endblock script %}

@@ -146,6 +146,26 @@
         //start animating
         window.requestAnimationFrame(step);
     }
+
+    function isInViewPort(element) {
+        // Get the bounding client rectangle position in the viewport
+        var bounding = element.getBoundingClientRect();
+    
+        // Checking part. Here the code checks if it's *fully* visible
+        // Edit this part if you just want a partial visibility
+        if (
+            bounding.top >= 0 &&
+            bounding.left >= 0 &&
+            bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+            bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        ) {
+            console.log('In the viewport! :)');
+            return true;
+        } else {
+            console.log('Not in the viewport. :(');
+            return false;
+        }
+    }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
