@@ -97,4 +97,4 @@ def education():
     return render_template('education.html', aerospaceData=aerospaceData, civilData=civilData)
 
 
-app.run(host='0.0.0.0', port=81, debug=True)
+# app.run(host='0.0.0.0', port=81, debug=True)
