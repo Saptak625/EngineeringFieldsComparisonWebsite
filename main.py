@@ -48,7 +48,8 @@ def salary():
 
 @app.route('/projects')
 def projects():
-    return render_template('projects.html')
+    numbers = [str(i+1) for i in range(4)]
+    return render_template('projects.html', numbers = numbers)
 
 
 @app.route('/education')
@@ -64,7 +65,7 @@ def education():
              'Principles of Automatic Control', 'Dynamics',
              'Statistics and Probability', 'Introduction to Probability',
              'Differential Equations'
-         ]),
+         ], "http://catalog.mit.edu/degree-charts/aerospace-engineering-course-16/"),
         ('Illinois.jpg', 'University of Illinois Urbana-Champaign',
          'Public University', 2, 18998, [
              'Aerospace Computer-Aided Design', 'Aerospace Flight Mechanics',
@@ -73,7 +74,7 @@ def education():
              'Aerospace Dynamical Systems', 'Aerospace Control Systems',
              'Thermodynamics', 'Engineering Materials',
              'Introduction to Statics', 'Introductory Dynamics'
-         ]),
+         ], "http://catalog.illinois.edu/undergraduate/engineering/aerospace-engineering-bs/#degreerequirementstext"),
         ('Michigan.jpg', 'University of Michigan - Ann Arbor',
          'Public Institution', 3, 28338, [
              'Intro to Aerospace Engineering',
@@ -83,16 +84,16 @@ def education():
              'Aircraft Dynamics or AEROSP 343 Spacecraft Dynamics',
              'Introduction to Aerospace Computing',
              'Control of Aerospace Vehicles'
-         ])
+         ], "https://aero.engin.umich.edu/undergraduate/degree-requirements/")
     ]
 
     civilData = [
         ('Berkeley.jpg', 'University of California - Berkeley',
-         'Public Institution', 4, 43980, ['Structural reliability', 'Mechanics of solids', 'Concrete technology', 'Construction, scheduling, resource allocation', 'Advanced soil mechanics', 'Linear programming', 'Reliability theory', 'Applied dynamic programming']),
+         'Public Institution', 4, 43980, ['Structural reliability', 'Mechanics of solids', 'Concrete technology', 'Construction, scheduling, resource allocation', 'Advanced soil mechanics', 'Linear programming', 'Reliability theory', 'Applied dynamic programming'], "https://ce.berkeley.edu/programs/trans/courses"),
         ('MIT.jpg', 'Massachusetts Institute of Technology',
-         'Private Institution', 5, 57986, ['Engineering computation and data science', 'Intro to computer programming and numerical methods for engineering applications', 'Startup sustainable technologies', 'Experiential sustainability', 'Tools for sustainable design', 'Engineering for a sustainable world', 'Climate change', 'Probability and casual interference', 'Senior civil and environmental design', 'Fundamentals of ecology', 'Mechanics of materials']),
+         'Private Institution', 5, 57986, ['Engineering computation and data science', 'Intro to computer programming and numerical methods for engineering applications', 'Startup sustainable technologies', 'Experiential sustainability', 'Tools for sustainable design', 'Engineering for a sustainable world', 'Climate change', 'Probability and casual interference', 'Senior civil and environmental design', 'Fundamentals of ecology', 'Mechanics of materials'], "http://catalog.mit.edu/subjects/1/"),
         ('Oregon.jpg', 'Oregon State University',
-         'Public Institution', 6, 29421, ['Design engineering and problem solving', 'Computational and algorithmic thinking', 'Chemistry', 'General physics w/ calc', 'Differential calc', 'Integral calc', 'Vector calc', 'English composition', 'Structural theory', 'Hydrology', 'Reinforced concrete', 'Geotechnical engineering', 'Intro to highway engineering'])
+         'Public Institution', 6, 29421, ['Design engineering and problem solving', 'Computational and algorithmic thinking', 'Chemistry', 'General physics w/ calc', 'Differential calc', 'Integral calc', 'Vector calc', 'English composition', 'Structural theory', 'Hydrology', 'Reinforced concrete', 'Geotechnical engineering', 'Intro to highway engineering'], "https://catalog.oregonstate.edu/college-departments/engineering/school-civil-construction-engineering/civil-engineering-ba-bs-hba-hbs/#sampleplantext")
     ]
     return render_template('education.html', aerospaceData=aerospaceData, civilData=civilData)
 
